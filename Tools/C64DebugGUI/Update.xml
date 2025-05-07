@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!-- Increment the version for each update. -->
+<Manifest version="1.0.22">
+
+	<!-- Prompt? False = Will download and install automatically on update discovery-->
+	<Prompt>True</Prompt>
+
+	<!-- The URI to the remote manifest -->
+	<RemoteConfigUri>{hidden}</RemoteConfigUri>
+
+	<!-- This token must be the same at both ends to avoid tampering -->
+	<SecurityToken>D3571-N304G-R8N35-C64D3-8UGGU-14THW</SecurityToken>
+
+	<!-- All payload files are assumed to have this URI prefix. -->
+	<BaseUri>{Hidden}</BaseUri> 
+
+	<!-- Remote Zip File containing updates. -->
+	<Payload>C64DebugGUI.zip</Payload>
+
+	<!-- Brief header description of release-->
+	<ReleaseBrief>Improvements</ReleaseBrief>
+
+	<!-- Fuller Release Notes / changelog --> 
+	<ReleaseNotes>
+Tweaked key-sends to C64Debugger. Hopefully should fix the ctrl key getting stuck.
+Also, "Keydown Time" in settings can be set really low - around 10ms is working for me.
+  </ReleaseNotes>
+</Manifest>

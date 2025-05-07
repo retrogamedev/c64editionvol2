@@ -1,0 +1,234 @@
+<html>
+<head>
+<title>CharPad 2.3 User Manual</title>
+<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body text="#000000" link="#0000ff" vlink="#0000ff">
+
+<img src="icon48.png" width=96 height=96>
+<p><a href="Contents.htm">&lt;&lt; Back to contents.</a> 
+<p><b>CharPad 2.3 User Manual - Subchrist Software, 2019.</b>
+
+
+<p><b>VIC-II Register Map.</b>
+<br><br>
+
+<p>The VIC-II graphics chip has 47 (8-bit) registers that can be collectively switched in or 
+out of the Commodore 64's address space but they will always appear between addresses $d000 
+and $d02e when switched in, these addresses are included in the register map below.
+    
+<br><br>    
+<table>
+<tr><td>Reg# |<td>Addr Hex |<td>Addr Dec |<td>Description... 
+<tr><td>0     <td>$d000     <td>53248     <td>Sprite 0 X-position.
+<tr><td>1     <td>$d001     <td>53249     <td>Sprite 0 Y-position.
+<tr><td>2     <td>$d002     <td>53250     <td>Sprite 1 X-position.
+<tr><td>3     <td>$d003     <td>53251     <td>Sprite 1 Y-position.
+<tr><td>4     <td>$d004     <td>53252     <td>Sprite 2 X-position.
+<tr><td>5     <td>$d005     <td>53253     <td>Sprite 2 Y-position.
+<tr><td>6     <td>$d006     <td>53254     <td>Sprite 3 X-position.
+<tr><td>7     <td>$d007     <td>53255     <td>Sprite 3 Y-position.
+<tr><td>8     <td>$d008     <td>53256     <td>Sprite 4 X-position.
+<tr><td>9     <td>$d009     <td>53257     <td>Sprite 4 Y-position.
+<tr><td>10    <td>$d00a     <td>53258     <td>Sprite 5 X-position.
+<tr><td>11    <td>$d00b     <td>53259     <td>Sprite 5 Y-position.
+<tr><td>12    <td>$d00c     <td>53260     <td>Sprite 6 X-position.
+<tr><td>13    <td>$d00d     <td>53261     <td>Sprite 6 Y-position.
+<tr><td>14    <td>$d00e     <td>53262     <td>Sprite 7 X-position.
+<tr><td>15    <td>$d00f     <td>53263     <td>Sprite 7 Y-position.
+<tr><td>16    <td>$d010     <td>53264     <td>Sprites 0-7 X-position MSb's, one bit per sprite. 
+<tr><td>&nbsp;<td>          <td>          <td>
+<tr><td>17    <td>$d011     <td>53265     <td>Control register 1 (default = X0011011)... 
+<tr><td>      <td>          <td>          <td>&nbsp;&nbsp;Bit 7 - Raster line (Bit 8), read current, write for IRQ.
+<tr><td>      <td>          <td>          <td>&nbsp;&nbsp;Bit 6 - Extended colour text mode (1 = Enabled).
+<tr><td>      <td>          <td>          <td>&nbsp;&nbsp;Bit 5 - Bitmap mode (1 = Enabled).
+<tr><td>      <td>          <td>          <td>&nbsp;&nbsp;Bit 4 - Blank screen to border colour (0 = Blank).
+<tr><td>      <td>          <td>          <td>&nbsp;&nbsp;Bit 3 - Select 24/25 row text display (1 = 25 Rows).
+<tr><td>      <td>          <td>          <td>&nbsp;&nbsp;Bit 2 - Screen scroll Y-offset (Bit 2).
+<tr><td>      <td>          <td>          <td>&nbsp;&nbsp;Bit 1 - Screen scroll Y-offset (Bit 1).
+<tr><td>      <td>          <td>          <td>&nbsp;&nbsp;Bit 0 - Screen scroll Y-offset (Bit 0).
+<tr><td>&nbsp;<td>          <td>          <td>                                                
+<tr><td>18    <td>$d012     <td>53266     <td>Raster line (Bits 0-7), read current, write for IRQ.
+<tr><td>19    <td>$d013     <td>53267     <td>Light-pen latch X-position.
+<tr><td>20    <td>$d014     <td>53268     <td>Light-pen latch Y-position.
+<tr><td>21    <td>$d015     <td>53269     <td>Sprite display enable (one bit per sprite, 1 = Enabled).
+<tr><td>&nbsp;<td>          <td>          <td>                                             
+<tr><td>22    <td>$d016     <td>53270     <td>Control register 2 (default = 11001000)...  
+<tr><td>      <td>          <td>          <td>&nbsp;&nbsp;Bit 7 - NC
+<tr><td>      <td>          <td>          <td>&nbsp;&nbsp;Bit 6 - NC
+<tr><td>      <td>          <td>          <td>&nbsp;&nbsp;Bit 5 - RES: ALWAYS SET THIS BIT TO 0!.
+<tr><td>      <td>          <td>          <td>&nbsp;&nbsp;Bit 4 - Screen multi-colour mode. (1 = Enabled).
+<tr><td>      <td>          <td>          <td>&nbsp;&nbsp;Bit 3 - Select 38/40 column text display (1 = 40 columns).
+<tr><td>      <td>          <td>          <td>&nbsp;&nbsp;Bit 2 - Screen scroll X-offset (Bit 2).
+<tr><td>      <td>          <td>          <td>&nbsp;&nbsp;Bit 1 - Screen scroll X-offset (Bit 1).
+<tr><td>      <td>          <td>          <td>&nbsp;&nbsp;Bit 0 - Screen scroll X-offset (Bit 0).
+<tr><td>&nbsp;<td>          <td>          <td>  
+<tr><td>23    <td>$d017     <td>53271     <td>Sprites 0-7 expand 2x vertical (one bit per sprite, 1 = Enabled).
+<tr><td>&nbsp;<td>          <td>          <td>                                             
+<tr><td>24    <td>$d018     <td>53272     <td>Memory pointer register (default = 00010101)... 
+<tr><td>      <td>          <td>          <td>&nbsp;&nbsp;Bit 7 - Video matrix (1KB) base address (Bit 3).
+<tr><td>      <td>          <td>          <td>&nbsp;&nbsp;Bit 6 - Video matrix (1KB) base address (Bit 2).
+<tr><td>      <td>          <td>          <td>&nbsp;&nbsp;Bit 5 - Video matrix (1KB) base address (Bit 1).
+<tr><td>      <td>          <td>          <td>&nbsp;&nbsp;Bit 4 - Video matrix (1KB) base address (Bit 0).
+<tr><td>      <td>          <td>          <td>&nbsp;&nbsp;Bit 3 - Character set (2KB) base address (Bit 2).
+<tr><td>      <td>          <td>          <td>&nbsp;&nbsp;Bit 2 - Character set (2KB) base address (Bit 1).
+<tr><td>      <td>          <td>          <td>&nbsp;&nbsp;Bit 1 - Character set (2KB) base address (Bit 0).
+<tr><td>      <td>          <td>          <td>&nbsp;&nbsp;Bit 0 - NC
+<tr><td>&nbsp;<td>          <td>          <td> 
+<tr><td>      <td>          <td>          <td>&nbsp;&nbsp;nb. In bitmap mode, bit 3 selects the upper or lower 8KB for use, bits 1 and 2 are ignored).                                   
+<tr><td>&nbsp;<td>          <td>          <td> 
+<tr><td>25    <td>$d019     <td>53273     <td>Interrupt flag register (1 = IRQ occurred)... 
+<tr><td>      <td>          <td>          <td>&nbsp;&nbsp;Bit 7 - Set on any enabled VIC IRQ condition.
+<tr><td>      <td>          <td>          <td>&nbsp;&nbsp;Bit 6 - NC
+<tr><td>      <td>          <td>          <td>&nbsp;&nbsp;Bit 5 - NC
+<tr><td>      <td>          <td>          <td>&nbsp;&nbsp;Bit 4 - NC
+<tr><td>      <td>          <td>          <td>&nbsp;&nbsp;Bit 3 - IRQ: Light-pen.
+<tr><td>      <td>          <td>          <td>&nbsp;&nbsp;Bit 2 - IRQ: Sprite-to-sprite collision.
+<tr><td>      <td>          <td>          <td>&nbsp;&nbsp;Bit 1 - IRQ: Sprite-to-character collision.
+<tr><td>      <td>          <td>          <td>&nbsp;&nbsp;Bit 0 - IRQ: Raster beam reached written line.
+<tr><td>&nbsp;<td>          <td>          <td> 
+<tr><td>      <td>          <td>          <td>&nbsp;&nbsp;nb. Read to determine IRQ status/sources, write (1's) to acknowledge IRQ(s).
+<tr><td>&nbsp;<td>          <td>          <td>  
+<tr><td>26    <td>$d01a     <td>53274     <td>Interrupt mask register. (1 = IRQ enabled)...
+<tr><td>      <td>          <td>          <td>&nbsp;&nbsp;Bit 7 - NC
+<tr><td>      <td>          <td>          <td>&nbsp;&nbsp;Bit 6 - NC
+<tr><td>      <td>          <td>          <td>&nbsp;&nbsp;Bit 5 - NC
+<tr><td>      <td>          <td>          <td>&nbsp;&nbsp;Bit 4 - NC
+<tr><td>      <td>          <td>          <td>&nbsp;&nbsp;Bit 3 - IRQ: Light-pen.
+<tr><td>      <td>          <td>          <td>&nbsp;&nbsp;Bit 2 - IRQ: Sprite-to-sprite collision.
+<tr><td>      <td>          <td>          <td>&nbsp;&nbsp;Bit 1 - IRQ: Sprite-to-character collision.
+<tr><td>      <td>          <td>          <td>&nbsp;&nbsp;Bit 0 - IRQ: Raster line comparison.
+<tr><td>&nbsp;<td>          <td>          <td> 
+<tr><td>      <td>          <td>          <td>&nbsp;&nbsp;nb. Write (1's) to enable IRQ source(s).
+<tr><td>&nbsp;<td>          <td>          <td>  
+<tr><td>27    <td>$d01b     <td>53275     <td>Sprite to background display priority (one bit per sprite, 0 = Sprite has priority).                                     
+<tr><td>28    <td>$d01c     <td>53276     <td>Sprites 0-7 multi-colour mode select (one bit per sprite, 1 = Multi-colour).                                     
+<tr><td>29    <td>$d01d     <td>53277     <td>Sprites 0-7 expand 2x horizontal (one bit per sprite, 1 = Expand).    
+<tr><td>30    <td>$d01e     <td>53278     <td>Sprite-to-sprite collision detection (one bit per sprite, cleared on reading).  
+<tr><td>31    <td>$d01f     <td>53279     <td>Sprite-to-character collision detection (one bit per sprite, cleared on reading).
+<tr><td>32    <td>$d020     <td>53280     <td>Screen border colour (0-15).
+<tr><td>33    <td>$d021     <td>53281     <td>Background colour 0 (0-15, Screen colour). 
+<tr><td>34    <td>$d022     <td>53282     <td>Background colour 1 (0-15, Character multi-colour 1).
+<tr><td>35    <td>$d023     <td>53283     <td>Background colour 2 (0-15, Character multi-colour 2).
+<tr><td>36    <td>$d024     <td>53284     <td>Background colour 3 (Only used in 'Extended-colour' text mode).
+<tr><td>37    <td>$d025     <td>53285     <td>Sprite multi-colour 1 (0-15).
+<tr><td>38    <td>$d026     <td>53286     <td>Sprite multi-colour 2 (0-15).
+<tr><td>39    <td>$d027     <td>53287     <td>Sprite 0 colour (0-15).
+<tr><td>40    <td>$d028     <td>53288     <td>Sprite 1 colour (0-15).
+<tr><td>41    <td>$d029     <td>53289     <td>Sprite 2 colour (0-15).
+<tr><td>42    <td>$d02a     <td>53290     <td>Sprite 3 colour (0-15).
+<tr><td>43    <td>$d02b     <td>53291     <td>Sprite 4 colour (0-15).
+<tr><td>44    <td>$d02c     <td>53292     <td>Sprite 5 colour (0-15).
+<tr><td>45    <td>$d02d     <td>53293     <td>Sprite 6 colour (0-15).
+<tr><td>46    <td>$d02e     <td>53294     <td>Sprite 7 colour (0-15). 
+</table>  
+  
+<br>               
+<p><b>Notes...</b>
+
+<p>Bits marked NC are not connected and will always read as set (1).
+
+<p>All colour registers only have their low nybbles (4 bits) connected, the bits
+of their upper nybbles will always read as set (1).   
+
+<p>The 24/25 row mode switch ($d011, bit 3) is something of a misnomer, there are 
+always 25 rows in the video matrix, this switch just toggles the visual expansion 
+of the top and bottom borders, "24 row mode" is usually used to conceal the sudden
+appearance of fresh data when scrolling the screen vertically.
+
+<p>The 38/40 column mode switch ($d016, bit 3) is something of a misnomer, there are
+always 40 columns in the video matrix, this switch just toggles the visual expansion
+of the left and right borders, "38 column mode" is usually used to conceal the sudden 
+appearance of fresh data when scrolling the screen horizontally.
+
+<p>The VIC-II can only access 16KB of memory (it only has 14 address lines), 
+this can be deduced by examining the memory pointer register (reg #24, $d018) 
+which only provides a 4-bit pointer (values 0-15) to specify a 1KB video matrix,
+a 3-bit pointer (values 0-7) to specify a 2KB character set and a 1-bit pointer
+(0 or 1) to specify an 8KB bitmap image.
+
+<p>The Commodore 64 (with it's 64KB memory) solves the above issue by providing 
+two additional address bits in CIA chip #2, using these, the VIC-II can be made
+to "see" any one (but only one) of the four possible 16KB quarters 
+("video banks") of the available 64KB RAM.   
+
+<p>Sprite images (63 bytes each) are selected using the Sprite Pointers, these 
+are not available as on-chip registers, instead they are always located in the 
+last 8 bytes of the active 1024 byte video matrix (which itself requires only 
+1000 bytes, 40x25 cells). 
+
+<p>ie. If the VIC-II is using video bank 0 ($0000-$3fff, 16KB) and the video 
+matrix pointer ($d018, upper nybble) is also set to 0 
+($0000-$03ff, 1KB) then the 8 Sprite Pointers will be available at addresses
+$03f8-$03ff. 
+
+<p>Although each sprite image requires only 63 bytes, each image's data should 
+always be aligned on a 64 byte boundary, as each Sprite Pointer stores an 8-bit 
+value (0-255) then we have space for a possible 256 sprite images in a 16KB 
+video bank (256 * 64).
+
+<p>When the VIC-II is switched in to the Commodore 64's address space 
+(as is normal) it's 47 registers appear from $d000 to $d02e but they are also 
+mirrored every 64 bytes up to $d3ff, a total of 16 times across this 1024 byte
+(1KB) memory area as listed below.
+
+<p>nb. After each range of 47 addresses follows 17 disconnected addresses 
+(64 total) that will always read $ff (ie. $d02f-$d03f).
+ 
+<p> $d000 - $d02e (the VIC-II registers are normally accessed using this 
+address range).
+
+<br>$d040 - $d06e 
+<br>$d080 - $d0ae 
+<br>$d0c0 - $d0ee 
+<br>$d100 - $d12e 
+<br>$d140 - $d16e 
+<br>$d180 - $d1ae 
+<br>$d1c0 - $d1ee 
+<br>$d200 - $d22e 
+<br>$d240 - $d26e 
+<br>$d280 - $d2ae 
+<br>$d2c0 - $d2ee 
+<br>$d300 - $d32e 
+<br>$d340 - $d36e 
+<br>$d380 - $d3ae 
+<br>$d3c0 - $d3ee 
+
+<p>We can say then that the chip has a 1KB (1024 byte) footprint despite only 
+having 47 registers.
+     
+<br><br><br><br><br><br><br><br><br><br>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+

@@ -1,0 +1,1 @@
+start x64 -config vice_en.ini -cartgmod2 "sams-journey-gmod2-flash.bin" -gmod2eepromimage "sams-journey-gmod2-eeprom.bin"

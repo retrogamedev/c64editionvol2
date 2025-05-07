@@ -1,0 +1,120 @@
+
+
+CharPad 2.3.0 - What's New?... 
+ 
+
+- Fixed: There was a problem when loading CTM V4 files that use a 1x1 tile-set and per tile colouring, such files are
+  now properly converted to tile-less/per-char colouring.
+
+- Fixed: There was a problem causing crashes when copying tiles larger than 5x5.
+
+- Fixed: There was a problem causing crashes when importing map data that was smaller than the current map dimensions.
+
+- Fixed: There were some issues with window positioning when the program was not maximized.
+
+- Fixed: There were some issues causing crashes when de-tiling/re-tiling large maps to use smaller tiles (ie. Turrican/Rambo).
+
+- Changed: Complete code translation from C++/DotNet to C#/DotNet.  
+  A number of potential problems were exposed and fixed during translation and a great many improvements have 
+  been made to the program's internals.
+
+  The switch to C# may also improve compatibility with 'Mono' for non-Windows operating systems?
+
+- Changed: Clipboard operations on tiles now always handle pixel data (char images) not tile data, cutting/copying/pasting
+  between projects should be improved as a result.
+
+- Changed: If multi-colour mode is enabled, all four pens will now be available even if the selected item is 
+  high-resolution, a warning is given if attempting to draw into a high-resolution item with a multi-colour pen.
+  This allows the multi-colour pen colours to be modified without first needing to select a multi-colour item.
+
+- Changed: The default (new) project is now an un-tiled one.
+
+- Changed: When a project's tile system gets enabled, all child forms are now displayed.
+
+- Changed: Duplicate tiles are now automatically removed when the tile system gets enabled.
+
+- Changed: Smoothing of the tile-set and map images is now off by default.
+
+- Changed: Map clipboard ops/area highlighting is now only available when using the selection tool.
+
+- Changed: Menu and toolbar (main form) are now dynamic, available items will depend on which child form is active. 
+
+- Changed: 'Delete' for char/tile set (items are now removed not just cleared, with reference auto-correction). 
+
+- Changed: 'Cut' for char/tile set (items are now copied/removed, with reference auto-correction). 
+
+- Changed: 'Paste' for char/tile set (items are now inserted, with reference auto-correction). 
+
+- Changed: Bitmap image export of character set is now 64 characters wide (maximum, no longer fixed-width).
+
+- Changed: Bitmap image export of tile set is now 16 tiles wide (maximum, no longer fixed-width).
+
+- Changed: 'Paste (overwrite)' can now increase the set size when necessary.
+
+- Changed: 'Cut' for char/tile editors has been removed (it's operations (clear/copy) are still available).
+
+- Added: Character and tile editors now display the numbers of the current items.  
+
+- Added: 'Insert Blank' for char/tile set (with reference auto-correction). 
+
+- Added: 'Paste Over' for char/tile set.
+
+- Added: 'Paste After' for char/tile set (simplifies pasting chars/tiles to the very end of a set). 
+
+- Added: 'Range Cycle' (forwards/backwards) for char/tile set.
+
+- Added: 'Crop' for selected chars/tiles (with reference auto-correction).
+
+- Added: 'Crop' for selected map areas.
+
+- Added: 'Reverse Order' for selected chars/tiles.
+
+- Added: Project data auto-correction on project load/save.
+
+- Added: 'Reset Window Layout' menu option.
+
+- Added: Open/Save (project) icons to the main toolbar.
+ 
+- Added: Warnings about tile size mismatches when copying/pasting between projects.
+
+- Added: Warnings when decompression is not possible due to excessive chars required (>65536).
+
+- Added: Warnings on tile and map data exports about possible value clipping when a project contains more than 256 chars
+  or tiles. (exported binaries store only only 8-bit data).
+
+- Added: Warning/correction when pasting map data with references not valid for the curent project.
+
+- Added: Import/Export/Binary - Import char set attributes. 
+
+- Added: Import/Export/Binary - Import tile set attributes.
+
+- Added 'Reflect Left to Right' and 'Reflect Top to Bottom' for map data.
+
+- Conversions between tiled/un-tiled projects process improved (no conversion offered if map blank + sensible map resizing). 
+
+- Changed: Character editor is now sizeable and zoomable.
+
+- Added: Scroll, Flip and Reflect operations for only the selected map area (when the Selection tool is enabled).
+
+- Added: Map selected area fill (incremental from zero).
+
+- Added: HTML help files.
+
+- Added: A few additions and tweaks to the examples.
+
+- Added: A folder of examples kindly donated by Saul Cross.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 

@@ -1,0 +1,57 @@
+<html>
+<head>
+<title>CharPad 2.3 User Manual</title>
+<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body text="#000000" link="#0000ff" vlink="#0000ff">
+
+<img src="icon48.png" width=96 height=96>
+<p><a href="Contents.htm">&lt;&lt; Back to contents.</a> 
+<p><b>CharPad 2.3 User Manual - Subchrist Software, 2019.</b>
+
+
+<p><b>Multi-colour character images.</b> 
+<br><br> 
+
+<p>Multi-colour character images are 4x8 pixels in size and use a bit-depth of 2 bits-per-pixel.
+
+<p>They can therefore use four colours...
+
+<p>A background colour (0-15), defined in the VIC register at memory address $d021 (53281).
+
+<p>Multi-colour 1 (0-15), defined in the VIC register at memory address $d022 (53282).
+
+<p>Multi-colour 2 (0-15), defined in the VIC register at memory address $d023 (53283).
+
+<p>A foreground colour (0-7), screen-position dependent, defined in the colour-RAM matrix from $d800 (55296). 
+ 
+
+<br><br>
+<p>When the VIC chip is operating in multi-colour character mode, it uses a mechanism that allows high-resolution
+character images to be displayed as well.
+
+<p>The foreground colour value (in the colour-RAM matrix) is reduced to just 3 bits to specify a colour (0-7) and the 
+highest bit (of the nybble) is used to select multi-colour mode for any particular screen cell.
+
+<p>ie. any character image displayed in a screen cell using a colour value between 0-7 will appear in high-resolution mode.
+
+<p>Any character image displayed in a screen cell using a colour value between 8-15 will appear in multi-colour mode.
+  
+<br><br>
+<p><b>Notes:-</b>
+
+<p>Multi-colour character images are displayed using double-width pixels so their visible size is actually the same as
+that of high-resolution character images. 
+
+<p>In standard character-mode (without using raster tricks), the Commodore 64 can display up to 256 different character 
+images on-screen.
+
+<p>00 pixel = Background colour (defined in the low nybble of address $d021).
+<p>01 pixel = Multi-colour 1 (defined in the low nybble of address $d022).
+<p>10 pixel = Multi-colour 2 (defined in the low nybble of address $d023).
+<p>11 pixel = Foreground colour (defined in the lowest 3 bits of the nybble in the relevant colour-RAM cell, 55296 + (y * 40) + x).
+
+<br><br><br><br><br><br><br><br><br><br>
+
+</body>
+</html>

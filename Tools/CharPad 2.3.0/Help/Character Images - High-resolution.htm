@@ -1,0 +1,41 @@
+<html>
+<head>
+<title>CharPad 2.3 User Manual</title>
+<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body text="#000000" link="#0000ff" vlink="#0000ff">
+
+<img src="icon48.png" width=96 height=96>
+<p><a href="Contents.htm">&lt;&lt; Back to contents.</a> 
+<p><b>CharPad 2.3 User Manual - Subchrist Software, 2019.</b>
+
+
+<p><b>High-resolution character images.</b> 
+<br><br> 
+
+<p>High-resolution character images are 8x8 pixels in size and use a bit-depth of 1 bit-per-pixel.
+
+<p>They can therefore use two colours...
+
+<p>A background colour (0-15), defined in the VIC register at memory address $d021 (53281).
+
+<p>The background colour is the same for all displayed character images.
+
+<p>The colour of an image's set (1) pixels is determined by the image's location on-screen, more specifically
+the colour (0-15) that has been assigned to the image's screen position in the colour-RAM matrix.
+
+<p>The colour-RAM matrix (a 40x25 byte array, only the low nybbles are usable) is available from memory address $d800 (55296).
+ 
+<br><br>
+<p><b>Notes:-</b>
+
+<p>In standard character-mode (without using raster tricks), the Commodore 64 can display up to 256 different character 
+images on-screen.
+
+<p>0 pixel = Background colour (defined in the low nybble of address $d021).
+<p>1 pixel = Foreground colour (defined in the low nybble of the relevant colour-RAM cell, 55296 + (y * 40) + x).  
+
+<br><br><br><br><br><br><br><br><br><br>
+
+</body>
+</html>
