@@ -2,7 +2,7 @@ The VS Code extension for building and running C64 code has changed since the bo
 
 ### Update Extension Settings
 
-1. Open **Settings** for the extension by clicking the cog icon and choosing **Settings**.
+1. Open **Settings** for the extension by clicking the **cog icon** and choosing **Settings**.
 
 2. Place a single dot in **Kickassembler > Assembler > Option: Output Directory**.
 
