@@ -4,7 +4,7 @@ The VS Code extension for building and running C64 code has changed since the bo
 
 1. Open **Settings** for the extension by clicking the cog icon and choosing **Settings**.
 
-2. Placing a single dot in **Kickassembler > Assembler > Option: Output Directory**.
+2. Place a single dot in **Kickassembler > Assembler > Option: Output Directory**.
 
 3. Check the box for **Kickassembler > Assembler > Option: Vice Symbols**.
 
